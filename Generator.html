@@ -25,7 +25,6 @@
                     <option value="Data Matrix Code">Data Matrix Code</option>
                     <option value="PDF417">PDF417</option>
                     <option value="Aztec Code">Aztec Code</option>
-                    <option value="UPC-A">UPC-A</option>
                     <option value="EAN-13">EAN-13</option>
                     <option value="CODE39">CODE39</option>
                 </select>
@@ -33,11 +32,11 @@
             <br>
             <div class="get" id="get">
                 <label for="text">Enter your text:</label>
-                <input type="text" id="text">
+                <input type="text" id="text" required>
             </div>
             <br>
             <div id="code-img">
-                <svg></svg>
+                <svg style="display: none;"></svg>
             </div>
             <button id="gen"><b>Generate</b></button> <div id="button-container"></div> </form>
     </div>
