@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Generator</title>
     <link rel="stylesheet" href="Generator.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="https://unpkg.com/bwip-js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bwip-js@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode/dist/JsBarcode.all.min.js"></script>
+    <script src="https://unpkg.com/bwip-js@latest/dist/bwip-js-min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode/dist/JsBarcode.all.min.js"></script>
+
+</head>
 <body>
     <div class="content">
         <form action="" onsubmit="return false;">
             <div class="drop" id="drop">
-                <b>Select the type of symbology:</b>
+                <label for="symbology">Select the type of symbology:</label>
                 <select name="" id="symbology">
                     <option value="QR Code">QR Code</option>
                     <option value="Bar Code">Bar Code</option>
@@ -23,16 +32,15 @@
                 </select>
             </div>
             <br>
-            <div class="get">
-                <b>Enter your text: </b>
+            <div class="get" id="get">
+                <label for="text">Enter your text:</label>
                 <input type="text" id="text">
             </div>
             <br>
-            <div id="code-img"></div>
-            <br>
-            <button id="gen" onclick="generate()"><b>Generate</b></button>
-        </form>
-        
+            <div id="code-img">
+                <svg></svg>
+            </div>
+            <button id="gen"><b>Generate</b></button> <div id="button-container"></div> </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="Generator.js"></script>

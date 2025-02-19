@@ -1,32 +1,39 @@
-:root*{
+/* Generator.css */
+:root {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background: rgb(241, 241, 241); /* Define the missing variable */
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: var(--background);
+    background-color: var(--background); /* Define --background if needed */
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(241, 241, 241);
-    padding: 2%;
     box-shadow: 0 8px 10px rgba(73, 72, 72, 0.6);
     top: 20%;
     position: absolute;
     transform: translateY(-50%);
-    width: 30vw;
     height: 40vh;
     left: 50%;
     transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 5%;
 }
-.drop,.get{
+
+.drop, .get {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,27 +48,47 @@ body{
     color: white;
 }
 
-input{
+input {
     width: 55%;
 }
-form{
+
+form {
     gap: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: left;
-    margin-bottom: 50px;
+    margin-bottom: 20px; /* Adjusted margin */
 }
-button{
+
+button {
     padding: 10px;
     width: 120px;
     background-color: rgb(170, 167, 167);
     border: none;
+    cursor: pointer;
 }
-button a{
-    text-decoration: none;
-    color: black;
-}
-button:hover{
+
+button:hover {
     border: 2px solid black;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#save, #regenerate {
+    margin-top: 10px;
+}
+
+#code-img {
+    margin-bottom: 10px;
+}
+#code-img svg {
+    width: 200px;
+    height: 100px;
 }
