@@ -111,14 +111,39 @@ function generate() {
             codeImgDiv.appendChild(svgElement);
         
             JsBarcode(svgElement, inputText, {
-                format: "upc",  // ✅ Fixed format name
+                format: "upc",  // ✅ Correct format
                 width: 2,
                 height: 50,
                 displayValue: true
             });
         
-            generatedCode = "data:image/svg+xml;base64," + btoa(svgElement.outerHTML);
+            // No need to convert SVG to base64, just display it
+            generatedCode = svgElement.outerHTML;
         }
+        else if (selectedSymbology === 'EAN-13') {
+            const inputText = textInput.value.trim();
+    
+            if (!/^\d{12,13}$/.test(inputText)) {  // Allow 12 or 13 digits
+                alert("EAN-13 requires 12 or 13 numeric digits.");
+                return;
+            }
+    
+            const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            codeImgDiv.appendChild(svgElement);
+    
+            JsBarcode(svgElement, inputText, {
+                format: "EAN13", // Correct format name (case-sensitive)
+                width: 2,
+                height: 100, // Increased height for better visibility
+                displayValue: true,
+                margin: 0,
+                fontSize: 14,
+                textMargin: 5
+            });
+    
+            generatedCode = "data:image/svg+xml;base64," + btoa(svgElement.outerHTML);
+    
+        } 
         else {
             alert('Selected symbology is not yet supported: ' + selectedSymbology);
             return;
