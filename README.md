@@ -46,7 +46,7 @@ No additional setup is required. Just open the `index.html` file in a browser, a
 │── 📄 index.html        # Main HTML file
 │── 📄 Generator.css     # Stylesheet
 │── 📄 Generator.js      # JavaScript functionality
-│── 📂 assets            # Images and other assets
+│── 📂 Background Image  # Images
 │── 📜 README.md         # Project documentation
 ```
 
@@ -56,10 +56,10 @@ No additional setup is required. Just open the `index.html` file in a browser, a
 - [qrcodejs](https://github.com/davidshimjs/qrcodejs)
 
 ## License
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available.
 
 ## Contributions
 Feel free to contribute by submitting issues or pull requests. 🚀
 
 ## Contact
-For any inquiries, reach out via LinkedIn or email. 😊
+For any inquiries, reach out via LinkedIn (www.linkedin.com/in/malsha-amandi-636b5a262) or email (amandi123malsha@gmail.com). 😊
