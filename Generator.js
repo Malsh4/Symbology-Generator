@@ -172,19 +172,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function saveCode() {
         if (!generatedCode) return;
-
-        const a = document.createElement('a');
-        a.href = generatedCode;
-        a.download = 'code.png';
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-
+    
+        const selectedSymbology = symbologySelect.value.trim();
+        
+        if (selectedSymbology === 'Bar Code' || selectedSymbology === 'EAN-13' || selectedSymbology === 'CODE39') {
+            const svgElement = codeImgDiv.querySelector('svg');
+            if (!svgElement) return;
+    
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svgElement);
+            const blob = new Blob([svgString], { type: "image/svg+xml" });
+            const url = URL.createObjectURL(blob);
+    
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'barcode.svg';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } else {
+            const a = document.createElement('a');
+            a.href = generatedCode;
+            a.download = 'code.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    
         saveButton.textContent = 'Saved!';
         saveButton.disabled = true;
     }
-
+    
     regenerateButton.addEventListener('click', regenerateCode);
 
     function regenerateCode() {

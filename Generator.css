@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background: rgb(241, 241, 241); /* Define the missing variable */
+   
 }
 
 body {
@@ -11,7 +11,12 @@ body {
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: var(--background); /* Define --background if needed */
+    background-color: var(--background); 
+    background-image:url('bgImg.jpg');
+    background-repeat: no-repeat;
+    background-size: 500px; 
+    background-position: right -120%;
+    
 }
 
 .content {
@@ -38,20 +43,23 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 8px;
     line-height: 50px;
-    background-color: rgb(73, 72, 72);
+    background-color: #5264c3;
     width: 110%;
     border-radius: 10px;
     gap: 15px;
-    box-shadow: 0 0 8px black;
     color: white;
 }
-
+#symbology{
+    padding: 5px;
+}
 input {
     width: 55%;
 }
-
+#text{
+    padding: 5px;
+}
 form {
     gap: 10px;
     display: flex;
@@ -64,7 +72,7 @@ form {
 button {
     padding: 10px;
     width: 120px;
-    background-color: rgb(170, 167, 167);
+    background-color:#aec7f9;
     border: none;
     cursor: pointer;
 }
@@ -91,4 +99,61 @@ button:hover {
 #code-img svg {
     width: 200px;
     height: 100px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        background-size: contain;
+        background-position: center;
+    }
+
+    .content {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .drop, .get {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    input, #symbology {
+        width: 80%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #footer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    .drop, .get {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    input, #symbology {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #footer {
+        font-size: 10px;
+        padding: 6px;
+    }
 }
